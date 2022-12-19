@@ -1,0 +1,8 @@
+class Solution:
+    def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
+        count = 0
+        for ele in words:
+            if set(allowed).union(set(ele)) == set(allowed) :
+                count+=1
+        return count
+            
