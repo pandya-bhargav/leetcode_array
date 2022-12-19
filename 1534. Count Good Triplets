@@ -1,0 +1,11 @@
+class Solution:
+    def countGoodTriplets(self, arr: List[int], a: int, b: int, c: int) -> int:
+        count=0
+        l = len(arr)
+        for i in range(l-2):        #till 3rd last ele
+            for j in range(i+1,l-1):    #till 2nd last ele
+                if abs(arr[i]-arr[j])<=a :    #1st condition
+                    for k in range(j+1 , l):    # move for 2nd and 3rd conditions
+                        if abs(arr[i]-arr[k])<=c and abs(arr[j] - arr[k])<=b:
+                            count+=1
+        return count
